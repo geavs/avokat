@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avokat Denis Prifti — Zyrë Avokatie, Lushnjë</title>
+<meta name="description" content="Avokat Denis Prifti ofron shërbime të plota juridike dhe gjyqësore në fushën penale, civile, administrative, marrëdhënieve të punës, ekzekutive, pasurive të paluajtshme dhe kontratave. Lushnjë, Shqipëri.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/logo.jpg">
+<style>
+  :root{
+    --ink:#0a0906;
+    --ink-2:#141210;
+    --ink-3:#1c1914;
+    --gold-1:#cda44c;
+    --gold-2:#f2dfa4;
+    --gold-3:#8a6a28;
+    --ivory:#efe7cf;
+    --ivory-dim:#c9c0a6;
+    --line:rgba(205,164,76,.28);
+    --gold-grad:linear-gradient(120deg,#8a6a28 0%,#e9cd80 22%,#f7ecc0 42%,#cda44c 58%,#8a6a28 78%,#f0d99a 100%);
+    --shadow-deep:0 20px 60px rgba(0,0,0,.55);
+    --maxw:1160px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--ivory);
+    font-family:'Jost',sans-serif;
+    font-weight:300;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  h1,h2,h3,h4{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:600;
+    letter-spacing:.01em;
+    line-height:1.08;
+  }
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--gold-1);
+    display:flex; align-items:center; gap:14px;
+    margin-bottom:18px;
+  }
+  .eyebrow::before{content:""; width:34px; height:1px; background:var(--gold-1); display:inline-block;}
+  .gold-text{
+    background:var(--gold-grad);
+    background-size:300% 100%;
+    -webkit-background-clip:text; background-clip:text;
+    -webkit-text-fill-color:transparent; color:transparent;
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .gold-text{animation:shimmer 7s ease-in-out infinite;}
+  }
+  @keyframes shimmer{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+  }
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px; letter-spacing:.14em; text-transform:uppercase;
+    padding:15px 30px;
+    border-radius:2px;
+    cursor:pointer;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+    white-space:nowrap;
+  }
+  .btn-gold{
+    background:linear-gradient(180deg,#f2dfa4,#cda44c);
+    color:#151109;
+    box-shadow:0 1px 0 rgba(255,255,255,.5) inset, 0 10px 24px rgba(205,164,76,.22);
+  }
+  .btn-gold:hover{transform:translateY(-2px); box-shadow:0 1px 0 rgba(255,255,255,.6) inset, 0 16px 30px rgba(205,164,76,.32);}
+  .btn-line{
+    border:1px solid var(--line);
+    color:var(--ivory);
+    background:transparent;
+  }
+  .btn-line:hover{border-color:var(--gold-1); background:rgba(205,164,76,.08); transform:translateY(-2px);}
+  .btn-dark{
+    background:#141210; color:var(--gold-2); border:1px solid rgba(20,18,16,.15);
+  }
+  .btn-dark:hover{transform:translateY(-2px); box-shadow:0 12px 24px rgba(0,0,0,.28);}
+
+  /* texture */
+  .grain{position:relative;}
+  .grain::before{
+    content:""; position:absolute; inset:0; pointer-events:none; opacity:.5; mix-blend-mode:overlay;
+    background-image:
+      radial-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+      radial-gradient(rgba(255,255,255,.035) 1px, transparent 1px);
+    background-size:3px 3px, 7px 7px;
+    background-position:0 0, 2px 3px;
+  }
+
+  /* ===== NAV ===== */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(10,9,6,0);
+    border-bottom:1px solid transparent;
+    transition:background .35s ease, border-color .35s ease, padding .35s ease;
+    padding:20px 0;
+  }
+  header.scrolled{
+    background:rgba(10,9,6,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+    padding:12px 0;
+  }
+  header .wrap{display:flex; align-items:center; justify-content:space-between; gap:20px;}
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand img{height:42px; width:42px; object-fit:cover; border-radius:50%; border:1px solid var(--line);}
+  .brand-name{font-family:'Cormorant Garamond',serif; font-size:19px; letter-spacing:.04em; color:var(--ivory);}
+  .brand-name b{color:var(--gold-1); font-weight:600;}
+  nav.links{display:flex; gap:30px; font-size:13.5px; letter-spacing:.04em;}
+  nav.links a{color:var(--ivory-dim); position:relative; padding-bottom:4px;}
+  nav.links a::after{content:""; position:absolute; left:0; bottom:0; width:0; height:1px; background:var(--gold-1); transition:width .3s ease;}
+  nav.links a:hover{color:var(--gold-2);}
+  nav.links a:hover::after{width:100%;}
+  .nav-cta{display:flex; gap:10px;}
+  .nav-cta .btn{padding:10px 18px; font-size:11.5px;}
+  .burger{display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:0;}
+  .burger span{width:24px; height:1px; background:var(--gold-1);}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex; align-items:center; justify-content:center;
+    text-align:center;
+    background:
+      radial-gradient(ellipse at 50% -10%, rgba(205,164,76,.16), transparent 55%),
+      radial-gradient(ellipse at 50% 100%, rgba(138,106,40,.10), transparent 60%),
+      linear-gradient(180deg,#0a0906 0%, #100e0a 60%, #0a0906 100%);
+    padding:150px 24px 90px;
+  }
+  .hero-inner{max-width:840px; position:relative; z-index:2;}
+  .hero-crest{width:118px; height:118px; margin:0 auto 30px; position:relative;}
+  .hero-crest img{
+    width:100%; height:100%; object-fit:contain; 
+    filter:drop-shadow(0 10px 30px rgba(205,164,76,.25));
+  }
+  .hero h1{
+    font-size:clamp(40px, 7.2vw, 78px);
+    text-transform:uppercase;
+    letter-spacing:.03em;
+    margin-bottom:8px;
+  }
+  .hero .role{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px; letter-spacing:.35em; text-transform:uppercase;
+    color:var(--ivory-dim); margin-bottom:26px;
+  }
+  .hero p.lead{
+    font-size:18px; color:var(--ivory-dim); max-width:620px; margin:0 auto 42px;
+    font-weight:300;
+  }
+  .hero-ctas{display:flex; gap:16px; justify-content:center; flex-wrap:wrap;}
+  .hero-scroll{
+    position:absolute; bottom:34px; left:50%; transform:translateX(-50%);
+    font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.3em; text-transform:uppercase;
+    color:var(--gold-3); display:flex; flex-direction:column; align-items:center; gap:10px;
+  }
+  .hero-scroll .line{width:1px; height:20px; background:linear-gradient(var(--gold-1), transparent);}
+
+  /* ===== SECTION BASE ===== */
+  section{position:relative; padding:120px 0;}
+  .section-black{background:var(--ink);}
+  .section-alt{background:var(--ink-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .head-row{max-width:680px; margin-bottom:64px;}
+  .head-row h2{font-size:clamp(30px,4vw,46px); color:var(--ivory);}
+  .head-row .sub{color:var(--ivory-dim); font-size:16px; margin-top:18px; max-width:560px;}
+
+  /* ===== ABOUT ===== */
+  .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:center;}
+  .about-figure{
+    position:relative; aspect-ratio:4/5; border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    background:radial-gradient(ellipse at center, rgba(205,164,76,.08), transparent 70%), #0d0b08;
+  }
+  .about-figure img{width:62%;}
+  .about-figure::before, .about-figure::after{
+    content:""; position:absolute; width:26px; height:26px; border:1px solid var(--gold-1); opacity:.6;
+  }
+  .about-figure::before{top:14px; left:14px; border-right:0; border-bottom:0;}
+  .about-figure::after{bottom:14px; right:14px; border-left:0; border-top:0;}
+  .about-text p{color:var(--ivory-dim); font-size:16px; margin-bottom:20px;}
+  .about-text p strong{color:var(--gold-2); font-weight:500;}
+  .signature-line{
+    margin-top:34px; padding-top:26px; border-top:1px solid var(--line);
+    font-family:'Cormorant Garamond',serif; font-style:italic; font-size:22px; color:var(--gold-2);
+  }
+  .signature-line span{display:block; font-family:'IBM Plex Mono',monospace; font-style:normal; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--ivory-dim); margin-top:8px;}
+
+  /* ===== PILLARS (reverse gold band) ===== */
+  .pillars{
+    background:var(--gold-grad); background-size:220% 220%;
+    color:#171310;
+  }
+  @media (prefers-reduced-motion:no-preference){ .pillars{ animation:shimmer 16s ease-in-out infinite; } }
+  .pillars .eyebrow{color:#3a2c0f;}
+  .pillars .eyebrow::before{background:#3a2c0f;}
+  .pillars .head-row h2{color:#171310;}
+  .pillars .head-row .sub{color:#4a3c1f;}
+  .pillar-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(23,19,16,.18); border:1px solid rgba(23,19,16,.18);}
+  .pillar{background:transparent; padding:38px 30px; position:relative;}
+  .pillar svg{width:30px; height:30px; margin-bottom:22px; stroke:#171310;}
+  .pillar h3{font-size:22px; color:#171310; margin-bottom:10px;}
+  .pillar p{font-size:14.5px; color:#4a3c1f; line-height:1.6;}
+
+  /* ===== SERVICES — "Nenet" ===== */
+  .services-list{border-top:1px solid var(--line);}
+  .neni{
+    display:grid; grid-template-columns:170px 1fr; gap:40px;
+    padding:44px 0; border-bottom:1px solid var(--line);
+  }
+  .neni-num{
+    font-family:'IBM Plex Mono',monospace; font-size:13px; letter-spacing:.18em; color:var(--gold-1);
+    text-transform:uppercase;
+  }
+  .neni-num em{
+    display:block; font-family:'Cormorant Garamond',serif; font-style:normal; font-size:52px; color:var(--gold-2);
+    line-height:1; margin-top:10px;
+  }
+  .neni h3{font-size:26px; color:var(--ivory); margin-bottom:12px; font-weight:600;}
+  .neni p{color:var(--ivory-dim); font-size:15.5px; max-width:640px;}
+
+  /* ===== PROCESS ===== */
+  .process-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:36px;}
+  .process-step{border-left:1px solid var(--line); padding-left:22px; position:relative;}
+  .process-step .n{font-family:'Cormorant Garamond',serif; font-size:44px; color:var(--gold-1); line-height:1;}
+  .process-step h4{font-size:19px; margin:16px 0 10px; color:var(--ivory);}
+  .process-step p{font-size:14.5px; color:var(--ivory-dim);}
+
+  /* ===== REVIEWS ===== */
+  .review-card{
+    border:1px solid var(--line); padding:56px; text-align:center;
+    background:radial-gradient(ellipse at 50% 0%, rgba(205,164,76,.08), transparent 60%);
+  }
+  .stars{color:var(--gold-1); font-size:26px; letter-spacing:6px; margin-bottom:22px;}
+  .review-card p{color:var(--ivory-dim); font-size:17px; max-width:560px; margin:0 auto 30px; font-family:'Cormorant Garamond',serif; font-size:22px; font-style:italic; line-height:1.5;}
+
+  /* ===== CONTACT ===== */
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:70px;}
+  .info-block{margin-bottom:30px;}
+  .info-block .lbl{font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--gold-1); margin-bottom:10px;}
+  .info-block .val{font-size:18px; color:var(--ivory);}
+  .info-block .val a{color:var(--gold-2); border-bottom:1px solid var(--line);}
+  .hours-table{width:100%; border-collapse:collapse; margin-top:6px;}
+  .hours-table td{padding:8px 0; font-size:15px; color:var(--ivory-dim); border-bottom:1px dashed rgba(205,164,76,.15);}
+  .hours-table td:last-child{text-align:right; color:var(--ivory);}
+  .map-frame{border:1px solid var(--line); height:100%; min-height:380px; filter:grayscale(.4) contrast(1.05) invert(.92) brightness(.9);}
+  .map-frame iframe{width:100%; height:100%; min-height:380px; border:0; display:block;}
+
+  /* ===== CTA REVERSE BANNER ===== */
+  .cta-band{
+    background:var(--gold-grad); background-size:220% 220%;
+    color:#171310; text-align:center; padding:110px 24px;
+  }
+  @media (prefers-reduced-motion:no-preference){ .cta-band{ animation:shimmer 16s ease-in-out infinite; } }
+  .cta-band .eyebrow{color:#3a2c0f; justify-content:center;}
+  .cta-band .eyebrow::before{background:#3a2c0f;}
+  .cta-band h2{font-size:clamp(30px,5vw,54px); color:#171310; max-width:760px; margin:0 auto 26px;}
+  .cta-band p{color:#4a3c1f; max-width:520px; margin:0 auto 40px; font-size:16px;}
+  .cta-band .hero-ctas{justify-content:center;}
+  .cta-band .btn-line{border-color:rgba(23,19,16,.35); color:#171310;}
+  .cta-band .btn-line:hover{background:rgba(23,19,16,.08); border-color:#171310;}
+
+  /* ===== FOOTER (reverse) ===== */
+  footer{background:#141210; border-top:1px solid var(--line); padding:70px 0 30px; color:var(--ivory-dim);}
+  .foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:50px; margin-bottom:60px;}
+  .foot-brand{display:flex; gap:14px; align-items:center; margin-bottom:18px;}
+  .foot-brand img{height:46px; width:46px; border-radius:50%; object-fit:cover; border:1px solid var(--line);}
+  .foot-brand .name{font-family:'Cormorant Garamond',serif; font-size:20px; color:var(--ivory);}
+  footer h5{font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--gold-1); margin-bottom:18px;}
+  footer ul{list-style:none;}
+  footer li{margin-bottom:11px; font-size:14.5px;}
+  footer li a:hover{color:var(--gold-2);}
+  .foot-bottom{border-top:1px solid var(--line); padding-top:26px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px; font-size:12.5px; color:#7a715c;}
+
+  /* ===== FLOATING WHATSAPP ===== */
+  .float-wa{
+    position:fixed; right:22px; bottom:22px; z-index:90;
+    width:58px; height:58px; border-radius:50%;
+    background:linear-gradient(180deg,#f2dfa4,#cda44c);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 10px 26px rgba(0,0,0,.45);
+    transition:transform .25s ease;
+  }
+  .float-wa:hover{transform:scale(1.08);}
+  .float-wa svg{width:26px; height:26px; fill:#171310;}
+
+  /* ===== REVEAL ===== */
+  .reveal{opacity:0; transform:translateY(24px); transition:opacity .8s ease, transform .8s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width:980px){
+    nav.links{display:none;}
+    .burger{display:flex;}
+    .about-grid, .contact-grid{grid-template-columns:1fr; gap:44px;}
+    .pillar-grid{grid-template-columns:repeat(2,1fr);}
+    .process-grid{grid-template-columns:repeat(2,1fr);}
+    .neni{grid-template-columns:1fr; gap:14px;}
+    .foot-grid{grid-template-columns:1fr; gap:36px;}
+  }
+  @media (max-width:560px){
+    .pillar-grid{grid-template-columns:1fr;}
+    .process-grid{grid-template-columns:1fr;}
+    .nav-cta .btn span.txt{display:none;}
+    section{padding:84px 0;}
+    .hero{padding-top:130px;}
+  }
+
+@media (max-width:560px){
+  .review-card{
+    padding:40px 20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .review-card .btn-gold{
+    align-self:center;
+    margin-left:auto;
+    margin-right:auto;
+  }
+}
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="wrap">
+    <a href="#top" class="brand">
+      <img src="logo.jpg" alt="Stema Avokat Denis Prifti">
+      <span class="brand-name">Avokat <b>Denis Prifti</b></span>
+    </a>
+    <nav class="links">
+      <a href="#rreth">Rreth Nesh</a>
+      <a href="#sherbimet">Shërbimet</a>
+      <a href="#si-punojme">Si Punojmë</a>
+      <a href="#vleresimet">Vlerësimet</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+	<!--
+    <div class="nav-cta">
+      <a class="btn btn-line" href="tel:+355695517225"><span class="txt">Telefono</span></a>
+      <a class="btn btn-gold" href="https://wa.me/355695517225" target="_blank" rel="noopener"><span class="txt">WhatsApp</span></a>
+    </div>
+-->
+    <button class="burger" id="burgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div id="top" class="hero grain">
+  <div class="hero-inner">
+    <div class="hero-crest"><img src="logo.jpg" alt="Stema — Avokat Denis Prifti"></div>
+    <p class="role">Zyrë Avokatie · Lushnjë, Shqipëri</p>
+    <h1 class="gold-text">Avokat<br>Denis Prifti</h1>
+    <p class="lead">Përfaqësim ligjor serioz dhe i qëndrueshëm, i mbështetur në njohuri të thelluara të legjislacionit shqiptar dhe në një etikë pune të patundur. Çdo çështje trajtohet me integritet, konfidencialitet dhe përkushtim të plotë.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-gold" href="tel:+355695517225">☎ Telefono Tani</a>
+      <a class="btn btn-line" href="https://wa.me/355695517225" target="_blank" rel="noopener">Shkruaj në WhatsApp</a>
+    </div>
+  </div> 
+  <br>
+
+<div class="hero-scroll"><span>Zbulo Më Shumë</span><span class="line"></span></div>
+</div>
+
+<section class="section-black" id="rreth">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-figure reveal">
+        <img src="logo.jpg" alt="Stema e Avokat Denis Prifti">
+      </div>
+      <div class="about-text reveal">
+        <div class="eyebrow">Rreth Avokatit</div>
+        <h2 style="font-size:clamp(28px,3.6vw,40px); margin-bottom:26px;">Një zë i qëndrueshëm në krah të drejtësisë suaj</h2>
+        <p><strong>Avokat Denis Prifti</strong> ofron shërbime të plota juridike dhe gjyqësore për individë, familje dhe subjekte biznesi, duke mbuluar fushën penale, civile, administrative, të marrëdhënieve të punës, ekzekutive, si dhe çështjet e pasurive të paluajtshme e kontratave.</p>
+        <p>Me bazë në Lushnjë dhe veprimtari në të gjithë territorin e Republikës së Shqipërisë, çdo dosje trajtohet me rigorozitet ligjor, analizë të hollësishme të fakteve dhe komunikim të drejtpërdrejtë me klientin — pa premtime boshe, vetëm vlerësim real i situatës dhe strategjia më e mirë e mundshme.</p>
+        <p>Parimi udhëheqës mbetet i thjeshtë: <strong>integriteti nuk negociohet</strong>. Çdo klient meriton të njohë të vërtetën ligjore të rastit të tij, të mbrohet me seriozitet dhe të përfaqësohet me dinjitet përpara çdo institucioni apo gjykate.</p>
+        <div class="signature-line">
+          "Drejtësia mbrohet me dije, me durim dhe me ndershmëri."
+          <span>Av. Denis Prifti</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pillars">
+  <div class="wrap">
+    <div class="head-row reveal">
+      <div class="eyebrow">Parimet e Punës</div>
+      <h2>Çfarë e dallon këtë zyrë avokatie</h2>
+    </div>
+  </div>
+  <div class="wrap" style="padding:0;">
+    <div class="pillar-grid reveal">
+      <div class="pillar">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3"><path d="M12 2v20M6 6h12M4 6l3 6a3 3 0 0 0 6 0L10 6M14 6l3 6a3 3 0 0 0 6 0l-3-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Integritet</h3>
+        <p>Këshillë e ndershme në çdo hap, pa premtime boshe dhe pa kompromis mbi etikën e profesionit të avokatit.</p>
+      </div>
+      <div class="pillar">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M8 9h8M8 13h8M8 17h5" stroke-linecap="round"/></svg>
+        <h3>Profesionalizëm</h3>
+        <p>Trajtim rigoroz i çdo dosjeje — nga analiza fillestare e provave, deri te përfaqësimi në seancë gjyqësore.</p>
+      </div>
+      <div class="pillar">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3"><rect x="5" y="10" width="14" height="10" rx="1"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke-linecap="round"/></svg>
+        <h3>Konfidencialitet</h3>
+        <p>Sekreti profesional respektohet plotësisht; dokumentacioni dhe të dhënat e klientit mbrohen me kujdes maksimal.</p>
+      </div>
+      <div class="pillar">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3"><path d="M12 21s-7-4.5-9.5-9C1 8 2.5 4 6.5 4c2 0 3.5 1.2 4.5 2.5C12 5.2 13.5 4 15.5 4 19.5 4 21 8 19.5 12 17 16.5 12 21 12 21z" stroke-linejoin="round"/></svg>
+        <h3>Përkushtim</h3>
+        <p>Çdo klient trajtohet individualisht, me kohën dhe vëmendjen e nevojshme për specifikat e rastit të tij.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-black" id="sherbimet">
+  <div class="wrap">
+    <div class="head-row reveal">
+      <div class="eyebrow">Fushat e Praktikës</div>
+      <h2>Shërbime Ligjore të Plota</h2>
+      <p class="sub">Nga konsulenca fillestare deri te përfaqësimi në çdo shkallë gjykimi — një ofertë ligjore e strukturuar si më poshtë.</p>
+    </div>
+    <div class="services-list">
+      <div class="neni reveal">
+        <div class="neni-num">Fusha<em>01</em></div>
+        <div><h3>E Drejta Penale</h3><p>Mbrojtje dhe përfaqësim në çështje penale në çdo fazë të procesit — nga hetimi paraprak dhe marrja në pyetje, deri te gjykimi në shkallë të parë, apel dhe rekursi në Gjykatën e Lartë. Këshillim për të pandehur, të dëmtuar dhe palë të treta të interesuara.</p></div>
+      </div>
+      <div class="neni reveal">
+        <div class="neni-num">Fusha<em>02</em></div>
+        <div><h3>E Drejta Civile</h3><p>Përfaqësim në mosmarrëveshje civile: trashëgimi, pronësi, dëmshpërblim, marrëdhënie familjare (divorc, kujdestari, ndarje pasurie), si dhe hartim e kundërshtim kërkesëpadish civile përpara gjykatave kompetente.</p></div>
+      </div>
+      <div class="neni reveal">
+        <div class="neni-num">Fusha<em>03</em></div>
+        <div><h3>E Drejta Administrative</h3><p>Ankimim i akteve administrative, përfaqësim përpara organeve shtetërore dhe gjykatave administrative, procedura kundër vendimeve të institucioneve publike që cenojnë të drejtat dhe interesat e ligjshme të klientit.</p></div>
+      </div>
+      <div class="neni reveal">
+        <div class="neni-num">Fusha<em>04</em></div>
+        <div><h3>Marrëdhëniet e Punës</h3><p>Këshillim dhe përfaqësim për punëdhënës dhe punëmarrës: hartim kontratash pune, largime nga puna, dëmshpërblime dhe mosmarrëveshje me institucionet e sigurimeve shoqërore.</p></div>
+      </div>
+      <div class="neni reveal">
+        <div class="neni-num">Fusha<em>05</em></div>
+        <div><h3>E Drejta Ekzekutive</h3><p>Ndjekje e procedurave përmbarimore, hartim kërkesash për ekzekutimin e titujve ekzekutivë, përfaqësim përpara përmbaruesve gjyqësorë privatë dhe shtetërorë për zbatimin e vendimeve gjyqësore.</p></div>
+      </div>
+      <div class="neni reveal">
+        <div class="neni-num">Fusha<em>06</em></div>
+        <div><h3>Shitblerja e Pasurive të Paluajtshme</h3><p>Verifikim i statusit ligjor të pronës, hartim dhe kontrollim i kontratave të shitblerjes, përfaqësim te noteri dhe pranë Agjencisë Shtetërore të Kadastrës (ASHK), për transaksione të sigurta juridikisht.</p></div>
+      </div>
+      <div class="neni reveal" style="border-bottom:none;">
+        <div class="neni-num">Fusha<em>07</em></div>
+        <div><h3>Kontrata të Ndryshme</h3><p>Hartim, rishikim dhe negocim i kontratave tregtare, qiraje, shërbimi, huaje dhe bashkëpunimi, me qëllim mbrojtjen maksimale të interesave të klientit që para nënshkrimit të marrëveshjes.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt" id="si-punojme">
+  <div class="wrap">
+    <div class="head-row reveal">
+      <div class="eyebrow">Metodologjia</div>
+      <h2>Si Punojmë</h2>
+      <p class="sub">Një proces i qartë, në katër hapa, që mban klientin të informuar në çdo moment.</p>
+    </div>
+    <div class="process-grid reveal">
+      <div class="process-step"><div class="n">01</div><h4>Konsultim Fillestar</h4><p>Dëgjohet me kujdes rasti, mblidhen faktet dhe identifikohen afatet ligjore urgjente.</p></div>
+      <div class="process-step"><div class="n">02</div><h4>Analizë Ligjore</h4><p>Studiohet dokumentacioni dhe vlerësohen opsionet, duke përcaktuar strategjinë më efikase.</p></div>
+      <div class="process-step"><div class="n">03</div><h4>Veprim & Përfaqësim</h4><p>Hartohen aktet e nevojshme dhe klienti përfaqësohet përpara institucioneve ose gjykatave.</p></div>
+      <div class="process-step"><div class="n">04</div><h4>Rezultat & Mbyllje</h4><p>Klienti mbahet i informuar hap pas hapi, deri në zgjidhjen përfundimtare të çështjes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-black" id="vleresimet">
+  <div class="wrap">
+    <div class="head-row reveal" style="margin:0 auto 50px; text-align:center; max-width:600px;">
+      <div class="eyebrow" style="justify-content:center;">Reputacioni</div>
+      <h2>Besueshmëria e Ndërtuar me Punë</h2>
+    </div>
+    <div class="review-card reveal">
+      <div class="stars">★★★★★</div>
+      <p>Vlerësimet dhe komentet e plota nga klientët e Avokat Denis Prifti janë të verifikuara dhe të disponueshme publikisht në profilin zyrtar në Google.</p>
+      <a class="btn btn-gold" href="https://www.google.com/search?sca_esv=72d5cd2ff8b49349&hl=en-AL&sxsrf=APpeQnuxNLuUbmN41yQreLa6M6VMXuQHTg:1786448800187&q=avokat+denis+prifti+lushnjë+reviews&uds=AJ5uw18I3LM-Ady55TkSD2jsIVqf9MnvNs_8C_369uNtfNkLn606AwJdgA3DNP-IJEJ1FOb8x71IBgN2RSJe3L825eQ5-J9CvCzWOW5RIf72w7GGgoXf95G13sjVB-r3h6N9k3wM43DYjahYq4Hx66SWwqTWnO2FKDgJj1S--uGWYHeGMRUuO2Ify7p4CYGUqG1i-OvU91M1TZ32bCQ_QzCkmPGzLaZbRV7Ph0uzVZmHo9yZqvp35y_CfL0NNfpA1NiGU6fF7GGMAEtf8UkqYhRapXnikvGcivVGRl8xaG2MqZRVJUfLr4sLKIYLXBjKMFji3RL1IUcTBCvnHiXRdLyAbhreZ8C9eoGAm659CHmq-BXoFecT1KholxaZN7kgksZdxQSgpXf5N7sP4tYovgJBm4_TUmLwEdWqeveqMIR2CL_zTEcNIvU1jzntZ0BSCYfTndxFV01NgCGTzuG9pO5uLpkxjrqPooo6XVMjqStozU48wEvs2kE&si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-_01_Y2FvWgUD_z-cXWshht5W9TdfDQWQSNL1vvjGSurwECuw5yZWorYv_ybKB8q_auQg0o8OP7es4vY78SAG-ig2UwD75r1XjKD8X7lQjf8XYzPURg%3D%3D&sa=X&ved=2ahUKEwjPx5OxwJiWAxUHgf0HHZ5TCBYQk8gLegQIGhAB&ictx=1&stq=1&cs=0&lei=oAt7as_3CoeC9u8PnqehsAE#ebo=3" target="_blank" rel="noopener">Shiko Vlerësimet në Google</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt" id="kontakt">
+  <div class="wrap">
+    <div class="head-row reveal">
+      <div class="eyebrow">Na Kontaktoni</div>
+      <h2>Rezervo një Konsultë</h2>
+      <p class="sub">Kontaktoni drejtpërdrejt për një takim ose konsultë të parë ligjore.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="info-block">
+          <div class="lbl">Telefon / WhatsApp</div>
+          <div class="val"><a href="tel:+355695517225">+355 69 551 7225</a></div>
+        </div>
+        <div class="info-block">
+          <div class="lbl">Adresa</div>
+          <div class="val">Rruga "Qemal Stafa", Lagja "Çlirimi", Lushnjë, Shqipëri</div>
+        </div>
+        <div class="info-block">
+          <div class="lbl">Orari i Zyrës</div>
+          <table class="hours-table">
+            <tr><td>E Hënë – E Premte</td><td>08:30 – 15:00</td></tr>
+            <tr><td>E Shtunë – E Diel</td><td>Mbyllur</td></tr>
+          </table>
+          <p style="font-size:13px; color:var(--ivory-dim); margin-top:10px;">Për raste urgjente jashtë orarit, shkruani në WhatsApp.</p>
+        </div>
+        <div class="hero-ctas" style="margin-top:36px;">
+          <a class="btn btn-gold" href="tel:+355695517225">☎ Telefono Tani</a>
+          <a class="btn btn-line" href="https://wa.me/355695517225" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+      <div class="map-frame reveal">
+        <iframe src="https://www.google.com/maps?q=Avokat+Denis+Prifti,+Rruga+Qemal+Stafa,+Lushnj%C3%AB,+Albania&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div class="eyebrow">Konsultë Ligjore</div>
+    <h2 class="reveal">Çdo çështje ligjore ka nevojë për një përgjigje me kohë</h2>
+    <p>Sa më shpejt të kontaktoni, aq më shumë opsione ligjore mbeten të hapura. Shkruani ose telefononi tani për një vlerësim fillestar të rastit tuaj.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-dark" href="tel:+355695517225">☎ +355 69 551 7225</a>
+      <a class="btn btn-line" href="https://wa.me/355695517225" target="_blank" rel="noopener">Shkruaj në WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <img src="logo.jpg" alt="Stema Avokat Denis Prifti">
+          <span class="name">Avokat Denis Prifti</span>
+        </div>
+        <p style="max-width:320px; font-size:14.5px;">Shërbime të plota juridike dhe gjyqësore në fushën penale, civile, administrative, marrëdhënieve të punës, ekzekutive, pasurive të paluajtshme dhe kontratave — me integritet e profesionalizëm.</p>
+      </div>
+      <div>
+        <h5>Navigim</h5>
+        <ul>
+          <li><a href="#rreth">Rreth Nesh</a></li>
+          <li><a href="#sherbimet">Shërbimet</a></li>
+          <li><a href="#si-punojme">Si Punojmë</a></li>
+          <li><a href="#vleresimet">Vlerësimet</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Kontakt</h5>
+        <ul>
+          <li><a href="tel:+355695517225">+355 69 551 7225</a></li>
+          <li><a href="https://wa.me/355695517225" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li>Rruga "Qemal Stafa", Lushnjë</li>
+          <li><a href="https://share.google/rxW7hPmWN3SrOdrKb" target="_blank" rel="noopener">Profili në Google</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Avokat Denis Prifti. Të gjitha të drejtat e rezervuara.</span>
+      <span>Informacioni në këtë faqe ka karakter të përgjithshëm dhe nuk zëvendëson këshillimin ligjor individual.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/355695517225" target="_blank" rel="noopener" aria-label="Shkruaj në WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.646.857 5.093 2.312 7.078L4.8 28l6.09-1.598A11.94 11.94 0 0 0 16.001 27C22.63 27 28 21.627 28 15S22.63 3 16.001 3zm0 21.75c-1.98 0-3.826-.58-5.38-1.578l-.386-.244-3.612.948.964-3.522-.252-.4A9.72 9.72 0 0 1 6.25 15c0-5.385 4.366-9.75 9.751-9.75S25.75 9.615 25.75 15 21.386 24.75 16.001 24.75zm5.36-7.29c-.294-.148-1.74-.86-2.01-.958-.27-.099-.467-.148-.663.148-.196.294-.76.958-.932 1.155-.172.196-.343.221-.638.074-.294-.148-1.242-.457-2.365-1.457-.874-.78-1.464-1.744-1.636-2.038-.172-.294-.018-.453.13-.6.133-.133.294-.343.44-.515.148-.172.196-.294.294-.49.098-.196.05-.368-.024-.516-.074-.148-.663-1.6-.909-2.19-.24-.575-.484-.497-.663-.507-.172-.008-.368-.01-.564-.01-.196 0-.516.074-.786.368-.27.294-1.03 1.006-1.03 2.454s1.055 2.847 1.202 3.043c.148.196 2.076 3.17 5.032 4.445.703.303 1.252.484 1.68.62.706.225 1.348.193 1.856.117.566-.084 1.74-.712 1.985-1.4.246-.688.246-1.278.172-1.4-.074-.123-.27-.196-.564-.344z"/></svg>
+</a>
+
+<script>
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  const burger = document.getElementById('burgerBtn');
+  const navLinks = document.querySelector('nav.links');
+  burger.addEventListener('click', () => {
+    const open = navLinks.style.display === 'flex';
+    navLinks.style.display = open ? 'none' : 'flex';
+    navLinks.style.cssText += open ? '' : 'position:fixed; top:70px; left:0; right:0; background:#0a0906; flex-direction:column; padding:24px 28px; border-bottom:1px solid rgba(205,164,76,.28); gap:18px;';
+  });
+
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:0.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
